@@ -14,9 +14,16 @@ if(textAreaEl.value.includes('<script>')){
     const numberOfCharacters = textAreaEl.value.length;
     charactersNumberEl.textContent = numberOfCharacters;
     //Words
-    const numberOfWords = textAreaEl.value.split(' ').length;
-    wordsNumberEl.textContent = numberOfWords;
-    if(textAreaEl.value.length === 0){
+    //v1.0.1
+    // const numberOfWords = textAreaEl.value.split(' ').length;
+    // wordsNumberEl.textContent = numberOfWords;
+    // if(textAreaEl.value.length === 0){
+    //     wordsNumberEl.textContent = 0;
+    // }
+    //v1.0.2
+    const NumOfWords = textAreaEl.value.trim().split(/\s+/);
+    wordsNumberEl.textContent = NumOfWords.length;
+    if(textAreaEl.value.length===0){
         wordsNumberEl.textContent = 0;
     }
     // twitter
